@@ -1,66 +1,110 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-export default function contact() {
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [mobileno, setMobileNo] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [formMessage, setFormMessage] = useState(null); // For success/failure message
+  const [isSuccess, setIsSuccess] = useState(false); // For message styling
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/form", { name, email, mobileno, message })
+      .then((res) => {
+        setFormMessage("Form Submitted Successfully!");
+        setIsSuccess(true);
+        // Clear the form fields after submission
+        setName("");
+        setMobileNo("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        setFormMessage("Failed to Submit the Form. Please Try Again.");
+        setIsSuccess(false);
+      });
+  };
+
   return (
-      <div
-        className="bg-midnightPurple2 min-h-screen flex flex-col justify-evenly items-center p-6 "
-        id="contact">
-         <h1 className="text-center font-bold text-white text-4xl mb-8">Contact Me</h1>
+    <div
+      className="bg-midnightPurple2 min-h-screen flex flex-col justify-evenly items-center p-6"
+      id="contact"
+    >
+      <h1 className="text-center font-bold text-white text-4xl mb-8">
+        Contact Me
+      </h1>
 
-        <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white ">
-          <form action="" className="w-full space-y-6">
-          <div className="">
-          <label htmlFor="Name"  className='block'>
-          <span className="font-semibold">Name</span>
+      {formMessage && (
+        <div
+          className={`text-center p-4 mb-4 rounded-lg ${
+            isSuccess
+              ? "bg-green-500 text-white"
+              : "bg-red-500 text-white"
+          } transition duration-500 ease-in-out`}
+        >
+          {formMessage}
+        </div>
+      )}
+
+      <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white">
+        <form className="w-full space-y-6" onSubmit={handleSubmit}>
+          <label htmlFor="Name" className="block">
+            <span className="font-semibold">Name</span>
             <input
               type="text"
               placeholder="Your Name"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
-            /></label>
-            
-            <label htmlFor="Email" className='block'>
-            <span className=" font-semibold">Email</span>
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+
+          <label htmlFor="Email" className="block">
+            <span className="font-semibold">Email</span>
             <input
               type="email"
               placeholder="Your Email"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            </label>
-            
-            <label htmlFor="Number" className="block">
-            <span className=" font-semibold">Phone</span>
+          </label>
+
+          <label htmlFor="Number" className="block">
+            <span className="font-semibold">Phone</span>
             <input
               type="tel"
               placeholder="Your PhoneNumber"
-              className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none "
-            />
-            </label>
-            
-            <label htmlFor="subject" className='block'>
-            <span className=" font-semibold">Subject</span>
-            <input  
-              type="text"
-              placeholder="subject"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              value={mobileno}
+              onChange={(e) => setMobileNo(e.target.value)}
             />
-            </label>
-            
-            <label htmlFor="message" className='block'>
-              <span className=" font-semibold">Message</span>
+          </label>
+
+          <label htmlFor="message" className="block">
+            <span className="font-semibold">Message</span>
             <textarea
-              type="text"
-              placeholder="message"
+              placeholder="Message"
               rows={4}
               className="w-full bg-slate-900 mt-1 p-2 bg-grey-700 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
-            </label>
-            </div>
-            <button type="submit" className="w-full py-3 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-700 transition duration-300">
-            Send message
+          </label>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-700 transition duration-300"
+          >
+            Send Message
           </button>
-          </form>
-      {/* Contact Info Section */}
-        <div className="space-y-8 text-center text-white lg:text-left ">
+        </form>
+
+        {/* Contact Info Section */}
+        <div className="space-y-8 text-center text-white lg:text-left">
           <div className="flex justify-center items-center lg:justify-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +118,6 @@ export default function contact() {
             </svg>
             <p className="ml-2">+91 9886921568</p>
           </div>
-
           <div className="flex items-center justify-center lg:justify-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +132,6 @@ export default function contact() {
             </svg>
             <p className="ml-2">akashprinceakash9986@gmail.com</p>
           </div>
-
           <div className="flex items-center justify-center lg:justify-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +148,6 @@ export default function contact() {
           </div>
         </div>
       </div>
-      </div>
-  
+    </div>
   );
 }
