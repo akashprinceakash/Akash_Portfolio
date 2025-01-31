@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Header(){
+  // const [istoggle , settoggle]= useState(false);
+  //   const handletoggle=()=>{
+  //     settoggle(!istoggle)
+  //   }
     return(
-    <header className=' text-white p-4 flex flex-col sm:flex-row justify-between text-lg '>
+      <>
+      {/* <div onClick={handletoggle} className='block sm:hidden'>☰</div> */}
+      <header className=' text-white p-4 flex   flex-col  sm:flex-row justify-between text-lg '>
        <h1 className=' text-4xl'>Akash's Portfolio</h1>
       <nav className=' text-xl flex flex-col justify-around sm:w-1/2 sm:flex-row items-center'>
         <a href='#home'>Home</a>
@@ -13,5 +19,6 @@ export default function Header(){
         <a href='#contact'>contact</a>
       </nav>
     </header>
+      </>
     )
 }

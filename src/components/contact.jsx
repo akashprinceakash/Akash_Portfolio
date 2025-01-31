@@ -37,7 +37,7 @@ export default function Contact() {
         Contact Me
       </h1>
 
-      {formMessage && (
+       {formMessage && (
         <div
           className={`text-center p-4 mb-4 rounded-lg ${
             isSuccess
@@ -47,10 +47,12 @@ export default function Contact() {
         >
           {formMessage}
         </div>
-      )}
+      )} 
 
-      <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white">
-        <form className="w-full space-y-6" onSubmit={handleSubmit}>
+      <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white" >
+        <form className="w-full space-y-6"   onSubmit={handleSubmit}>
+        {/* action="https://api.web3forms.com/submit" method="POST"
+        <input type="hidden" name="access_key" value="17077431-449c-446d-b331-ec647dc16867"/> */}
           <label htmlFor="Name" className="block">
             <span className="font-semibold">Name</span>
             <input
@@ -58,6 +60,7 @@ export default function Contact() {
               placeholder="Your Name"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
           </label>
@@ -69,6 +72,7 @@ export default function Contact() {
               placeholder="Your Email"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
@@ -80,6 +84,7 @@ export default function Contact() {
               placeholder="Your PhoneNumber"
               className="w-full bg-slate-900 mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
               value={mobileno}
+              name="phone number"
               onChange={(e) => setMobileNo(e.target.value)}
             />
           </label>
@@ -89,6 +94,7 @@ export default function Contact() {
             <textarea
               placeholder="Message"
               rows={4}
+              name="message"
               className="w-full bg-slate-900 mt-1 p-2 bg-grey-700 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
