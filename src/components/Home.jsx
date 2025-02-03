@@ -1,5 +1,5 @@
 import React from "react";
-
+import heroimage from "../assets/Untitled_design__1_-removebg-preview.png"
 export default function Home() {
   
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="text-3xl"> And I'm a <b className="text-amber-700 shadow-lg shadow-indigo-500/100 "> Web Developer</b></div>
       </div> */}
       <img
-        src="src\assets\Untitled_design__1_-removebg-preview.png"
+        src={heroimage}
         alt="no image"
         className="w-4/5 sm:w-1/3 drop-shadow-custom1 hover:drop-shadow-custom  brightness-75 "
       />
