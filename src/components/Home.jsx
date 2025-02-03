@@ -3,7 +3,7 @@ import heroimage from "../assets/Untitled_design__1_-removebg-preview.png"
 export default function Home() {
   
   return (
-    <div className="bg-midnightPurple1  flex flex-col sm:flex-row justify-center items-center p-4 text-center w-full min-h-screen ">
+    <div className="bg-midnightPurple1  flex flex-col sm:flex-row justify-center items-center p-4 text-center w-full h-auto sm:min-h-screen  ">
       {/* <img
         src="src\assets\IMG_20220416_172444.jpg"
         alt="no image"
@@ -25,8 +25,8 @@ export default function Home() {
        <div className="text-orange-300  drop-shadow-2xl  mt-8 " id="home">
    
         {/* <h2 className="text-3xl mt-3">Hello,I AM</h2> */}
-        <h1 className="text-4xl mt-1 ">It's Akash R G</h1> 
-        <div className="text-3xl mt-3 drop-shadow-custom1">I'm a<b className="text-amber-700 shadow-lg shadow-indigo-500/100 ml-5 flex sm:inline-block hover:drop-shadow-custom1 hover:shadow-none"> Web Developer</b>
+        <h1 className="text-4xl mt-1 font-satisfy">It's Akash R G</h1> 
+        <div className="text-3xl mt-3 drop-shadow-custom1 font-satisfy">I'm a<b className="text-amber-700 shadow-lg shadow-indigo-500/100 ml-5 flex sm:inline-block hover:drop-shadow-custom1 hover:shadow-none font-satisfy"> Web Developer</b>
         <p></p></div>
       </div>
       <br />

@@ -21,6 +21,7 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Add the Poppins font here
+        satisfy: ["Satisfy", "serif"],
       },
       animation: {
         move: 'move 3s ease-in-out infinite',

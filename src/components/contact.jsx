@@ -33,7 +33,7 @@ export default function Contact() {
       className="bg-midnightPurple2 min-h-screen flex flex-col justify-evenly items-center p-6"
       id="contact"
     >
-      <h1 className="text-center font-bold text-white text-4xl mb-8">
+      <h1 className="text-center font-bold text-4xl mb-8 drop-shadow-custom1">
         Contact Me
       </h1>
 
@@ -49,7 +49,7 @@ export default function Contact() {
         </div>
       )} 
 
-      <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white" >
+      <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl text-white  drop-shadow-custom1" >
         <form className="w-full space-y-6"   onSubmit={handleSubmit}>
         {/* action="https://api.web3forms.com/submit" method="POST"
         <input type="hidden" name="access_key" value="17077431-449c-446d-b331-ec647dc16867"/> */}
@@ -103,14 +103,14 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full py-3 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-700 transition duration-300"
+            className="w-full py-3 bg-sky-700 text-white rounded-lg font-semibold hover:bg-sky-500 transition duration-300"
           >
             Send Message
           </button>
         </form>
 
         {/* Contact Info Section */}
-        <div className="space-y-8 text-center text-white lg:text-left">
+        <div className="space-y-8 text-center text-white lg:text-left drop-shadow-custom1">
           <div className="flex justify-center items-center lg:justify-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ export default function Contact() {
               <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
-            <p className="ml-2">akashprinceakash9986@gmail.com</p>
+            <p className="ml-2"> akashprinceakash9986@gmail.com</p>
           </div>
           <div className="flex items-center justify-center lg:justify-start">
             <svg
