@@ -12,7 +12,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/form", { name, email, mobileno, message })
+      .post("https://akashrgportfolio.netlify.app/form", { name, email, mobileno, message })
       .then((res) => {
         setFormMessage("Form Submitted Successfully!");
         setIsSuccess(true);
