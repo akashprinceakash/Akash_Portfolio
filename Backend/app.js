@@ -1,6 +1,7 @@
 const express=require('express');
 // const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
+const nodemailer = require('nodemailer');
 const app=express();
 const cors=require('cors');
 const env=require('dotenv').config({path : './Config/.env'});

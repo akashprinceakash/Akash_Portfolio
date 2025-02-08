@@ -3,7 +3,7 @@ import heroimage from "../assets/Untitled_design__1_-removebg-preview.png"
 export default function Home() {
   
   return (
-    <div className="bg-midnightPurple1  flex flex-col sm:flex-row justify-center items-center p-4 text-center w-full h-auto sm:min-h-screen  ">
+    <div className="bg-midnightPurple1  flex flex-col sm:flex-row justify-center items-center p-4 text-center w-full h-auto md:min-h-screen  ">
       {/* <img
         src="src\assets\IMG_20220416_172444.jpg"
         alt="no image"
@@ -19,7 +19,7 @@ export default function Home() {
       <img
         src={heroimage}
         alt="no image"
-        className="w-4/5 sm:w-1/3 drop-shadow-custom1 hover:drop-shadow-custom  brightness-75 "
+        className="w-4/5 sm:w-1/3 drop-shadow-custom1 hover:drop-shadow-custom  brightness-75 hover:cursor-pointer  "
       />
       
        <div className="text-orange-300  drop-shadow-2xl  mt-8 " id="home">

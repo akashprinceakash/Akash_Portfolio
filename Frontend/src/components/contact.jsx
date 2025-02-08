@@ -12,7 +12,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://akash-portfolio-g0zx.onrender.com/form", { name, email, mobileno, message })
+      .post("http://localhost:8000/form", { name, email, mobileno, message })
       .then((res) => {
         setFormMessage("Form Submitted Successfully!");
         setIsSuccess(true);
@@ -111,7 +111,7 @@ export default function Contact() {
 
         {/* Contact Info Section */}
         <div className="space-y-8 text-center text-white lg:text-left drop-shadow-custom1">
-          <div className="flex justify-center items-center lg:justify-start">
+          <div className="flex justify-center items-center lg:justify-start hover:text-slate-400 hover:cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 mr-2"
@@ -122,9 +122,9 @@ export default function Contact() {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.63-3.17A19.5 19.5 0 0 1 3.17 10.81 19.88 19.88 0 0 1 0 2.18 2 2 0 0 1 2.05 0h3a2 2 0 0 1 2 1.72 12.3 12.3 0 0 0 .65 2.78 2 2 0 0 1-.45 2.11L6.11 7.05a16 16 0 0 0 6.84 6.84l.44-.44a2 2 0 0 1 2.11-.45 12.3 12.3 0 0 0 2.78.65A2 2 0 0 1 22 16.92z" />
             </svg>
-            <p className="ml-2">+91 9886921568</p>
+            <p className="ml-2 ">+91 9886921568</p>
           </div>
-          <div className="flex items-center justify-center lg:justify-start">
+          <div className="flex items-center justify-center lg:justify-start hover:text-slate-400 hover:cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 mr-2"
@@ -138,7 +138,7 @@ export default function Contact() {
             </svg>
             <p className="ml-2"> akashprinceakash9986@gmail.com</p>
           </div>
-          <div className="flex items-center justify-center lg:justify-start">
+          <div className="flex items-center justify-center lg:justify-start hover:text-slate-400 hover:cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 mr-2"
