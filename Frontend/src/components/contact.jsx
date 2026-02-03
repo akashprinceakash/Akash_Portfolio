@@ -12,8 +12,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      // .post("https://akash-portfolio-i7a4.onrender.com/form", { name, email, mobileno, message })
-      .post("http://localhost:8000/form", { name, email, mobileno, message })
+      .post("https://akash-portfolio-i7a4.onrender.com/form", { name, email, mobileno, message })
       .then((res) => {
         setFormMessage("Form Submitted Successfully!");
         setIsSuccess(true);
