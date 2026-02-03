@@ -14,8 +14,8 @@ app.use('/',routes)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(Port,(error) =>{
     if(error){
-        console.log("failed to to server");     
+        console.log("failed to  server");     
     }else{
-    console.log("Server is running at port number 8000");
+    console.log(`Server is running at port number ${Port}`);
     }
 })
